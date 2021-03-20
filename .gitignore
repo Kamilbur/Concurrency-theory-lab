@@ -2,6 +2,9 @@
 .idea
 out
 
+# Python
+venv
+
 # Compiled class file
 *.class
 
