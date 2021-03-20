@@ -1,15 +1,14 @@
 package lab03;
 
 public class Producer extends Thread {
-    private final RunIndicator runIndicator;
+    private static final FinishIndicator finishIndicator = FinishIndicator.getFinishIndicator();
     private final Buffer buff;
     int productionSize;
     int accessCount = 0;
     
 
-    Producer(int productionSize, RunIndicator runIndicator, Buffer buff) {
+    Producer(int productionSize, Buffer buff) {
         this.productionSize = productionSize;
-        this.runIndicator = runIndicator;
         this.buff = buff;
     }
 
@@ -23,6 +22,14 @@ public class Producer extends Thread {
                 e.printStackTrace();
             }
 
-        } while (this.runIndicator.Should_Be_Running());
+        } while (finishIndicator.isNotFinished());
+    }
+
+    public int getProductionSize() {
+        return productionSize;
+    }
+
+    public int getAccessCount() {
+        return accessCount;
     }
 }

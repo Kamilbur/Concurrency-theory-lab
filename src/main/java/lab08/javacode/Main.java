@@ -1,4 +1,4 @@
-package lab08.java;
+package lab08.javacode;
 
 public class Main {
     static int numOfThreads = 5;
