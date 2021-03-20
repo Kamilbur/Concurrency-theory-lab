@@ -11,6 +11,7 @@ public class Main {
         else {
             c = new NotSynchronizedCounter();
         }
+
         MyThread t1 = new MyThread(c, 0);
         MyThread t2 = new MyThread(c, 1);
 
