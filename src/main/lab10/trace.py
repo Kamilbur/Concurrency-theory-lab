@@ -196,13 +196,14 @@ class Trace:
 
         return ''.join(list(map(lambda x: '(' + x + ')', classes)))
 
-    def save_graph_to_file(self, filename='graph_results/graph'):
-        """ Save graph to file in graphviz format and as a
+    def save_graph_to_file(self, filename='graph_results/graph', file_format='jpeg'):
+        """ Save graph to file in graphviz format and as an image
 
         :param filename: string containing a name of file to which the graph will be saved
+        :param file_format:  string with format information e.g. 'png', 'svg', 'jpeg', ...
         :return:
         """
-        graph = graphviz.Digraph('G', filename=filename, format='svg')
+        graph = graphviz.Digraph('G', filename=filename, format=file_format)
         for i, label in enumerate(self.graph_labels):
             graph.node(str(i), label=label)
 
