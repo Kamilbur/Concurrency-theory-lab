@@ -4,7 +4,7 @@ const waterfall = require('async/waterfall');
 const parallel = require('async/parallel');
 
 let global_count = 0;
-const directory_path = './PAM08' // to be modified
+const directory_path = './PAM08' // the source of data http://home.agh.edu.pl/~balis/dydakt/tw/lab7/pam08.zip
 
 
 async function count_lines(path, cb) {
